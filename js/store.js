@@ -1,5 +1,5 @@
 /* ==========================================================
-   ShopSphere - Data layer (localStorage "database")
+  PIJIPOLKI_STORE - Data layer (localStorage "database")
    ----------------------------------------------------------
    Everything the shop needs is saved in the browser's
    localStorage, so purchases, stock, carts and order status
@@ -15,7 +15,7 @@ const KEY = {
   users: "ss_users", products: "ss_products", orders: "ss_orders",
   seed: "ss_seed", cart: "ss_cart_", addr: "ss_addr_", session: "ss_session"
 };
-const SEED_VERSION = "3";
+const SEED_VERSION = "4";
 const SHIPPING_FEE = 8;
 const FREE_SHIPPING_OVER = 300;
 
