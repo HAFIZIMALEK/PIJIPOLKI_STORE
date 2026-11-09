@@ -1,5 +1,5 @@
 /* ==========================================================
-   ShopSphere - Shared layout & UI helpers
+   PIJIPOLKI_STORE - Shared layout & UI helpers
    Renders a role-specific navbar + footer on every page, plus
    small helpers for status badges, order tracker and details.
    ========================================================== */
@@ -91,7 +91,7 @@ function renderFooter() {
       </div>
       <hr class="border-secondary my-3">
       <div class="d-flex flex-column flex-md-row justify-content-between small">
-        <span>&copy; 2026 ShopSphere. All rights reserved.</span>
+        <span>&copy; 2026 PIJIPOLKI_STORE. All rights reserved.</span>
         <span>Demo project &middot; data saved in your browser</span>
       </div>
     </div>
