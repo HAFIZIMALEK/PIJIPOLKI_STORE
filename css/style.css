@@ -1,0 +1,181 @@
+/* ==========================================================
+   ShopSphere - Global Stylesheet
+   IMS566 Individual Assignment
+   Sections: 1 Variables | 2 Base | 3 Login | 4 Navbar |
+             5 Cards | 6 Products | 7 Tables | 8 Footer | 9 Responsive
+   ========================================================== */
+
+/* ---------- 1. Variables ---------- */
+:root {
+  --ss-primary: #4f46e5;
+  --ss-primary-dark: #3730a3;
+  --ss-accent: #f59e0b;
+  --ss-bg: #f4f6fb;
+  --ss-text: #1f2937;
+  --ss-muted: #6b7280;
+  --ss-radius: 14px;
+  --ss-shadow: 0 4px 18px rgba(31, 41, 55, .08);
+}
+
+/* ---------- 2. Base ---------- */
+body {
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--ss-bg);
+  color: var(--ss-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main { flex: 1; }
+.btn-primary {
+  --bs-btn-bg: var(--ss-primary);
+  --bs-btn-border-color: var(--ss-primary);
+  --bs-btn-hover-bg: var(--ss-primary-dark);
+  --bs-btn-hover-border-color: var(--ss-primary-dark);
+  --bs-btn-active-bg: var(--ss-primary-dark);
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--ss-primary);
+  --bs-btn-border-color: var(--ss-primary);
+  --bs-btn-hover-bg: var(--ss-primary);
+  --bs-btn-hover-border-color: var(--ss-primary);
+}
+.page-header h1 { font-size: 1.6rem; font-weight: 700; }
+.page-header p { color: var(--ss-muted); margin-bottom: 0; }
+
+/* ---------- 3. Login ---------- */
+.auth-wrap {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #312e81 0%, #4f46e5 50%, #7c3aed 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.auth-card {
+  width: 100%;
+  max-width: 960px;
+  border: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, .35);
+}
+.auth-side {
+  background: linear-gradient(160deg, rgba(0,0,0,.15), rgba(0,0,0,.35)), var(--ss-primary);
+  color: #fff;
+  padding: 3rem 2.5rem;
+}
+.auth-side .big-emoji { font-size: 3.5rem; }
+.auth-side li { margin-bottom: .6rem; }
+.auth-form { padding: 2.5rem; }
+.demo-box {
+  background: #eef2ff;
+  border: 1px dashed var(--ss-primary);
+  border-radius: 10px;
+  padding: .75rem 1rem;
+  font-size: .85rem;
+}
+.nav-tabs .nav-link { color: var(--ss-muted); font-weight: 600; }
+.nav-tabs .nav-link.active { color: var(--ss-primary); border-bottom: 3px solid var(--ss-primary); }
+
+/* ---------- 4. Navbar ---------- */
+.ss-navbar { background: linear-gradient(90deg, #312e81, #4f46e5); }
+.ss-navbar .navbar-brand { font-weight: 800; letter-spacing: .3px; }
+.ss-navbar .nav-link { color: rgba(255,255,255,.8); font-weight: 500; border-radius: 8px; padding: .5rem .9rem; }
+.ss-navbar .nav-link:hover { color: #fff; background: rgba(255,255,255,.1); }
+.ss-navbar .nav-link.active { color: #fff; background: rgba(255,255,255,.2); }
+.cart-badge { font-size: .65rem; }
+
+/* ---------- 5. Cards ---------- */
+.card { border: 0; border-radius: var(--ss-radius); box-shadow: var(--ss-shadow); }
+.stat-card .icon-box {
+  width: 52px; height: 52px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; color: #fff;
+}
+.stat-card .value { font-size: 1.6rem; font-weight: 800; line-height: 1.1; }
+.stat-card .label { color: var(--ss-muted); font-size: .85rem; }
+.bg-grad-1 { background: linear-gradient(135deg, #4f46e5, #818cf8); }
+.bg-grad-2 { background: linear-gradient(135deg, #059669, #34d399); }
+.bg-grad-3 { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
+.bg-grad-4 { background: linear-gradient(135deg, #e11d48, #fb7185); }
+.chart-box { position: relative; height: 300px; }
+
+/* ---------- 6. Products ---------- */
+.product-card { transition: transform .2s, box-shadow .2s; height: 100%; }
+.product-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(79,70,229,.18); }
+.product-thumb {
+  height: 140px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4rem;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  border-radius: var(--ss-radius) var(--ss-radius) 0 0;
+}
+.price { color: var(--ss-primary); font-weight: 800; font-size: 1.15rem; }
+.rating { color: var(--ss-accent); font-size: .85rem; }
+
+/* ---------- 7. Tables ---------- */
+.table-modern thead th {
+  background: #eef2ff; color: var(--ss-primary-dark);
+  font-size: .78rem; text-transform: uppercase; letter-spacing: .5px;
+  border: 0; white-space: nowrap;
+}
+.table-modern tbody tr { cursor: default; }
+.table-modern td { vertical-align: middle; }
+.sortable { cursor: pointer; user-select: none; }
+.sortable:hover { color: var(--ss-primary); }
+.status-pill { font-size: .75rem; padding: .35em .75em; border-radius: 999px; font-weight: 600; }
+.st-Delivered { background: #d1fae5; color: #065f46; }
+.st-Shipped { background: #dbeafe; color: #1e40af; }
+.st-Processing { background: #fef3c7; color: #92400e; }
+.st-Cancelled { background: #fee2e2; color: #991b1b; }
+
+/* ---------- 8. Footer ---------- */
+.ss-footer { background: #1e1b4b; color: #c7d2fe; margin-top: 3rem; }
+.ss-footer a { color: #c7d2fe; text-decoration: none; }
+.ss-footer a:hover { color: #fff; text-decoration: underline; }
+.ss-footer h6 { color: #fff; font-weight: 700; }
+
+/* ---------- 8b. Status, tracker, cart, payment, admin theme ---------- */
+.st-Pending-Payment { background: #ede9fe; color: #5b21b6; }
+.pay-Paid { background: #d1fae5; color: #065f46; }
+.pay-Unpaid { background: #fee2e2; color: #991b1b; }
+.pay-Refunded { background: #e5e7eb; color: #374151; }
+
+.ss-navbar-admin { background: linear-gradient(90deg, #111827, #374151); }
+.role-tag { font-size: .6rem; letter-spacing: .6px; vertical-align: middle; }
+
+.tracker { display: flex; justify-content: space-between; position: relative; margin: 1rem 0 .5rem; }
+.tracker::before { content: ""; position: absolute; top: 15px; left: 12%; right: 12%; height: 3px; background: #e5e7eb; }
+.tracker .step { flex: 1; text-align: center; position: relative; z-index: 1; font-size: .75rem; color: var(--ss-muted); }
+.tracker .dot {
+  width: 32px; height: 32px; border-radius: 50%; background: #e5e7eb; color: #9ca3af;
+  display: flex; align-items: center; justify-content: center; margin: 0 auto .25rem; font-size: .9rem;
+}
+.tracker .step.done { color: #065f46; font-weight: 600; }
+.tracker .step.done .dot { background: #10b981; color: #fff; }
+.tracker .step.current { color: var(--ss-primary); font-weight: 600; }
+.tracker .step.current .dot { background: var(--ss-primary); color: #fff; box-shadow: 0 0 0 4px rgba(79, 70, 229, .2); }
+
+.cart-line { display: flex; align-items: center; gap: .9rem; padding: .85rem 0; border-bottom: 1px solid #eef0f5; }
+.cart-line:last-child { border-bottom: 0; }
+.cart-thumb { width: 56px; height: 56px; flex: none; border-radius: 12px; background: #eef2ff; display: flex; align-items: center; justify-content: center; font-size: 1.9rem; }
+.qty-ctrl .btn { width: 32px; padding: .15rem 0; }
+.qty-ctrl span { display: inline-block; min-width: 32px; text-align: center; font-weight: 600; }
+
+.order-card { border-left: 5px solid var(--ss-primary); }
+.order-card.is-cancelled { border-left-color: #ef4444; opacity: .85; }
+.order-card.is-delivered { border-left-color: #10b981; }
+.welcome-banner { background: linear-gradient(135deg, #4f46e5, #7c3aed); color: #fff; border-radius: var(--ss-radius); }
+.success-check { font-size: 4rem; color: #10b981; line-height: 1; }
+.pay-methods .nav-link { color: var(--ss-text); border: 1px solid #e5e7eb; margin: 0 .2rem; }
+.pay-methods .nav-link.active { background: var(--ss-primary); border-color: var(--ss-primary); color: #fff; }
+.admin-tag { background: #111827; color: #fff; }
+
+/* ---------- 9. Responsive ---------- */
+@media (max-width: 767.98px) {
+  .auth-form, .auth-side { padding: 1.75rem 1.25rem; }
+  .page-header h1 { font-size: 1.35rem; }
+  .chart-box { height: 240px; }
+  .stat-card .value { font-size: 1.3rem; }
+}

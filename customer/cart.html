@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Review your ShopSphere cart, enter delivery details and pay for your order.">
+  <meta name="author" content="IMS566 Student">
+  <meta name="keywords" content="cart, checkout, payment, e-commerce">
+  <title>Cart &amp; Checkout | ShopSphere</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+  <script src="../js/store.js"></script>
+  <script src="../js/auth.js"></script>
+  <script>requireRole("customer");</script>
+
+  <div id="app-navbar" data-active="cart"></div>
+
+  <main class="container py-4">
+    <header class="page-header mb-4"><h1>Cart &amp; Checkout</h1><p>Review your items, enter delivery details and pay.</p></header>
+    <div id="pageAlert"></div>
+
+    <div id="emptyCart" class="card d-none"><div class="card-body text-center py-5">
+      <div class="fs-1">🛒</div><h5 class="mt-2">Your cart is empty</h5>
+      <a href="shop.html" class="btn btn-primary mt-2">Start shopping</a></div></div>
+
+    <div class="row g-3" id="cartLayout">
+      <div class="col-lg-7">
+        <section class="card" aria-label="Cart items"><div class="card-body">
+          <h5 class="card-title mb-2">Items</h5><div id="cartLines"></div></div></section>
+      </div>
+      <div class="col-lg-5">
+        <section class="card mb-3" aria-label="Order summary"><div class="card-body">
+          <h5 class="card-title">Order summary</h5>
+          <div class="d-flex justify-content-between"><span class="text-muted">Subtotal</span><span id="sumSub"></span></div>
+          <div class="d-flex justify-content-between"><span class="text-muted">Shipping</span><span id="sumShip"></span></div>
+          <small class="text-muted" id="shipHint"></small>
+          <hr><div class="d-flex justify-content-between fs-5 fw-bold"><span>Total</span><span class="text-primary" id="sumTotal"></span></div>
+        </div></section>
+        <section class="card" aria-label="Delivery details"><div class="card-body">
+          <h5 class="card-title">Delivery details</h5>
+          <div id="formAlert"></div>
+          <form id="checkoutForm" novalidate>
+            <div class="mb-2"><label class="form-label small" for="shipName">Receiver name</label><input id="shipName" class="form-control" autocomplete="name"></div>
+            <div class="mb-2"><label class="form-label small" for="shipPhone">Phone number</label><input id="shipPhone" class="form-control" inputmode="tel" autocomplete="tel" placeholder="012-3456789"></div>
+            <div class="mb-3"><label class="form-label small" for="shipAddress">Full address</label><textarea id="shipAddress" rows="3" class="form-control" autocomplete="street-address"></textarea></div>
+            <button type="submit" class="btn btn-primary w-100 py-2"><i class="bi bi-lock-fill me-1"></i>Place order &amp; pay</button>
+            <div class="small text-muted text-center mt-2">Payment is simulated. No real money is charged.</div>
+          </form>
+        </div></section>
+      </div>
+    </div>
+  </main>
+
+  <div id="app-footer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/payment.js"></script>
+  <script src="../js/cart.js"></script>
+</body>
+</html>
